@@ -294,6 +294,10 @@
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
+    {%- if settings.cart_type == 'drawer' or template.name == 'product' -%}
+      <script src="{{ 'product-form.js' | asset_url }}" defer></script>
+    {%- endif -%}
+
     <script src="{{ 'banner-video-script.js' | asset_url }}" defer="defer"></script>
   </body>
 </html>

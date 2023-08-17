@@ -5,6 +5,12 @@
   {% render 'cart-drawer' %}
 {% endcomment %}
 
+{% liquid
+  assign cartUpsellsTitle = settings.cart_upsells_title
+  assign cartUpsells = settings.cart_upsells
+  assign upsellsErrorMessage = settings.cart_upsells_error_message
+%}
+
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
 
 <style>
@@ -350,6 +356,38 @@
           <div id="CartDrawer-CartErrors" role="alert"></div>
         </form>
       </cart-drawer-items>
+      
+      {% if cartUpsells != blank %}
+        <div class="drawer__upsells">
+          <h3>{{ cartUpsellsTitle }}</h3>
+          {% liquid
+            assign upsellsInCart = 0
+            for product in cartUpsells
+
+              assign product_in_cart = false
+              for item in cart.items
+                if item.product.id == product.id
+                  assign product_in_cart = true
+                endif
+              endfor
+
+              if product_in_cart == false
+                render 'cart-drawer-upsell', product: product
+              elsif product_in_cart 
+                assign upsellsInCart = upsellsInCart | plus: 1
+              endif
+
+              if upsellsInCart == forloop.length
+                echo '<h3>'
+                echo  upsellsErrorMessage
+                echo '</h3>'
+              endif 
+
+            endfor 
+          %}
+        </div>
+      {% endif %}
+
       <div class="drawer__footer">
         {%- if settings.show_cart_note -%}
           <details id="Details-CartDrawer">
