@@ -24,11 +24,23 @@
             "deadline": "August 17, 2023 20:00:00 UTC",
             "countdown_error_message": "Time's Up"
           }
+        },
+        "7077dd1c-a9ce-424f-8784-a260c2ea7575": {
+          "type": "Countdown",
+          "settings": {
+            "text": "Welcome to our store",
+            "text_alignment": "center",
+            "color_scheme": "accent-1",
+            "link": "",
+            "deadline": "August 17, 2023 22:00:00 UTC+2",
+            "countdown_error_message": "Time's Up 2"
+          }
         }
       },
       "block_order": [
         "announcement-bar-0",
-        "511a68c4-7482-449c-a59f-3e379f3694f9"
+        "511a68c4-7482-449c-a59f-3e379f3694f9",
+        "7077dd1c-a9ce-424f-8784-a260c2ea7575"
       ],
       "settings": {
       }
