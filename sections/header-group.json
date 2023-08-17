@@ -16,6 +16,7 @@
         },
         "511a68c4-7482-449c-a59f-3e379f3694f9": {
           "type": "Countdown",
+          "disabled": true,
           "settings": {
             "text": "Welcome to our store",
             "text_alignment": "center",

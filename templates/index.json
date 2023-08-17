@@ -40,7 +40,7 @@
         "desktop_video_url": "shopify:\/\/files\/videos\/Elementor video placeholder.mp4",
         "mobile_video_url": "shopify:\/\/files\/videos\/production_id_4678261 (1080p).mp4",
         "mobile_video_height": 70,
-        "enable_video_background": true,
+        "enable_video_background": false,
         "image_overlay_opacity": 0,
         "image_height": "large",
         "desktop_content_position": "bottom-center",
